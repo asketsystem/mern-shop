@@ -4,35 +4,24 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+// If you are using react-router-dom v6 it looks like Switch has been replaced with Routes //
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
+  Routes,
+  Route
 } from "react-router-dom";
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/products/:category">
-          <ProductList />
-        </Route>
-        <Route path="/products/:id">
-          <Product />
-          <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route exact path="/home" element={<Home/>} />
+        <Route path="/products/:category" element={<ProductList/>} />
+        <Route path="/products/:id" element={<Product/>} />
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+      </Routes>
     </Router>
   )
 };
