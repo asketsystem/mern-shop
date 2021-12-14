@@ -1,3 +1,4 @@
+import React from "react";
 import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
@@ -8,7 +9,7 @@ import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 const KEY = process.env.REACT_APP_STRIPE;
 

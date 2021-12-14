@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { CaseReducer } from "./cartRedux";
+import cartReducer from "./cartRedux";
 
 export default configureStore({
     reducer: {
